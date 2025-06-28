@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36203.30 d17.14
+VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brazil Invoice Mock", "Brazil Invoice Mock.csproj", "{CC186BAF-3C1E-435E-BAF7-DC99331DE17A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrazilInvoiceMock", "BrazilInvoiceMock.csproj", "{CC186BAF-3C1E-435E-BAF7-DC99331DE17A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

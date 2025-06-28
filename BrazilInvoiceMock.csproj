@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Brazil_Invoice_Mock</RootNamespace>
-    <AssemblyName>Brazil Invoice Mock</AssemblyName>
+    <RootNamespace>BrazilInvoiceMock</RootNamespace>
+    <AssemblyName>BrazilInvoiceMock</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -67,15 +67,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NFeAutorizacao4.asmx" />
     <Content Include="Web.config" />
+    <Content Include="WebServices\NFeAutorizacao4.asmx" />
+    <None Include="WSDL\NFeAutorizacao4.wsdl" />
+    <None Include="XSD\enviNFe_v4.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\leiauteNFe_v4.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\tiposBasico_v4.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NFeAutorizacao4.asmx.cs">
-      <DependentUpon>NFeAutorizacao4.asmx</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Interfaces\INFeAutorizacao4.cs" />
+    <Compile Include="Models\TEnviNFe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthorizationProcessor.cs" />
+    <Compile Include="WebServices\NFeAutorizacao4.asmx.cs">
+      <DependentUpon>NFeAutorizacao4.asmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -86,9 +101,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WSDL\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
