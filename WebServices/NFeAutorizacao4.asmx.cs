@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BrazilInvoiceMock.Services;
+using BrazilInvoiceMock.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +17,7 @@ namespace BrazilInvoiceMock.WebServices
     {
         public XmlNode nfeAutorizacaoLote(XmlNode nfeDadosMsg)
         {
-            throw new NotImplementedException();
+            return new AuthorizationProcessor(XmlHelper.DeserializeXml<TEnviNFe>(nfeDadosMsg.OuterXml)).GenerateAuthorizationResponse();
         }
 
         public XmlNode nfeAutorizacaoLoteZip(string nfeDadosMsgZip)
