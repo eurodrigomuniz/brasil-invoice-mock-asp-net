@@ -10,9 +10,9 @@ using System.Xml;
 
 namespace BrazilInvoiceMock.Services
 {
-    public class AuthorizationProcessor
+    public class NFeAutorizacao4Processor
     {
-        public AuthorizationProcessor(TEnviNFe enviNFe)
+        public NFeAutorizacao4Processor(TEnviNFe enviNFe)
         {
             AcessKey = enviNFe.NFe[0].infNFe.Id.Replace("NFe", "");
             StatusCode = ExtractStatusCode(enviNFe);
@@ -60,9 +60,9 @@ namespace BrazilInvoiceMock.Services
             return $"1{StateCode}{DateTime.Now:yy}{string.Concat(Enumerable.Range(0, 10).Select(_ => random.Next(0, 10).ToString()))}";
         }
 
-        public XmlNode GenerateAuthorizationResponse()
+        public XmlNode GenerateResponse()
         {
-            var entry = new InvoiceEntry
+            InvoiceStore.SaveEntry(new InvoiceEntry
             {
                 ReceiptNumber = ReceiptNumber,
                 AccessKey = AcessKey,
@@ -71,11 +71,9 @@ namespace BrazilInvoiceMock.Services
                 StatusCode = StatusCode,
                 IssuingTypeCode = IssuingTypeCode,
                 ProtocolNumber = ProtocolNumber
-            };
+            });
 
-            InvoiceStore.SaveEntry(entry);
-
-            string authorizationResponse = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Templates/AuthorizationResponse.xml"));
+            string authorizationResponse = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Templates/NFeAutorizacao4.xml"));
 
             string receivalStatusCode = "103";
 

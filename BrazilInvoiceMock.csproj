@@ -70,12 +70,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Templates\NFeRetAutorizacao4.xml" />
+    <Content Include="WebServices\NFeRetAutorizacao4.asmx" />
     <None Include="App_Data\ReasonMessages.json" />
     <None Include="App_Data\ApplicationVersions.json" />
-    <Content Include="Templates\AuthorizationResponse.xml" />
+    <Content Include="Templates\NFeAutorizacao4.xml" />
     <Content Include="Web.config" />
     <Content Include="WebServices\NFeAutorizacao4.asmx" />
     <None Include="WSDL\NFeAutorizacao4.wsdl" />
+    <None Include="WSDL\NFeRetAutorizacao4.wsdl" />
+    <None Include="XSD\consReciNFe_v4.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="XSD\enviNFe_v4.00.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -91,15 +97,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\INFeAutorizacao4.cs" />
+    <Compile Include="Interfaces\INFeRetAutorizacao4.cs" />
+    <Compile Include="Models\SignatureType.cs" />
     <Compile Include="Models\TEnviNFe.cs" />
+    <Compile Include="Models\TConsReciNFe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtocolStorage\InvoiceEntry.cs" />
     <Compile Include="ProtocolStorage\InvoiceStore.cs" />
-    <Compile Include="Services\AuthorizationProcessor.cs" />
+    <Compile Include="Services\NFeAutorizacao4Processor.cs" />
+    <Compile Include="Services\NFeRetAutorizacao4Processor.cs" />
     <Compile Include="Utils\StaticDataProvider.cs" />
     <Compile Include="Utils\XmlHelper.cs" />
     <Compile Include="WebServices\NFeAutorizacao4.asmx.cs">
       <DependentUpon>NFeAutorizacao4.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\NFeRetAutorizacao4.asmx.cs">
+      <DependentUpon>NFeRetAutorizacao4.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace BrazilInvoiceMock.WebServices
     {
         public XmlNode nfeAutorizacaoLote(XmlNode nfeDadosMsg)
         {
-            return new AuthorizationProcessor(XmlHelper.DeserializeXml<TEnviNFe>(nfeDadosMsg.OuterXml)).GenerateAuthorizationResponse();
+            return new NFeAutorizacao4Processor(XmlHelper.DeserializeXml<TEnviNFe>(nfeDadosMsg.OuterXml)).GenerateResponse();
         }
 
         public XmlNode nfeAutorizacaoLoteZip(string nfeDadosMsgZip)

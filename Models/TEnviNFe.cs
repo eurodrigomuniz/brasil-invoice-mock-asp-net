@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using BrazilInvoiceMock.Models;
 using System.Xml.Serialization;
 
 // 
@@ -974,75 +975,6 @@ public partial class X509DataType {
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-public partial class KeyInfoType {
-    
-    private X509DataType x509DataField;
-    
-    private string idField;
-    
-    /// <remarks/>
-    public X509DataType X509Data {
-        get {
-            return this.x509DataField;
-        }
-        set {
-            this.x509DataField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-public partial class SignatureValueType {
-    
-    private string idField;
-    
-    private byte[] valueField;
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
-    public byte[] Value {
-        get {
-            return this.valueField;
-        }
-        set {
-            this.valueField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
 public partial class TransformType {
     
     private string[] xPathField;
@@ -1203,64 +1135,6 @@ public partial class ReferenceTypeDigestMethod {
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-public partial class SignedInfoType {
-    
-    private SignedInfoTypeCanonicalizationMethod canonicalizationMethodField;
-    
-    private SignedInfoTypeSignatureMethod signatureMethodField;
-    
-    private ReferenceType referenceField;
-    
-    private string idField;
-    
-    /// <remarks/>
-    public SignedInfoTypeCanonicalizationMethod CanonicalizationMethod {
-        get {
-            return this.canonicalizationMethodField;
-        }
-        set {
-            this.canonicalizationMethodField = value;
-        }
-    }
-    
-    /// <remarks/>
-    public SignedInfoTypeSignatureMethod SignatureMethod {
-        get {
-            return this.signatureMethodField;
-        }
-        set {
-            this.signatureMethodField = value;
-        }
-    }
-    
-    /// <remarks/>
-    public ReferenceType Reference {
-        get {
-            return this.referenceField;
-        }
-        set {
-            this.referenceField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
 [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.w3.org/2000/09/xmldsig#")]
 public partial class SignedInfoTypeCanonicalizationMethod {
     
@@ -1304,65 +1178,6 @@ public partial class SignedInfoTypeSignatureMethod {
         }
         set {
             this.algorithmField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-[System.Xml.Serialization.XmlRootAttribute("Signature", Namespace="http://www.w3.org/2000/09/xmldsig#", IsNullable=false)]
-public partial class SignatureType {
-    
-    private SignedInfoType signedInfoField;
-    
-    private SignatureValueType signatureValueField;
-    
-    private KeyInfoType keyInfoField;
-    
-    private string idField;
-    
-    /// <remarks/>
-    public SignedInfoType SignedInfo {
-        get {
-            return this.signedInfoField;
-        }
-        set {
-            this.signedInfoField = value;
-        }
-    }
-    
-    /// <remarks/>
-    public SignatureValueType SignatureValue {
-        get {
-            return this.signatureValueField;
-        }
-        set {
-            this.signatureValueField = value;
-        }
-    }
-    
-    /// <remarks/>
-    public KeyInfoType KeyInfo {
-        get {
-            return this.keyInfoField;
-        }
-        set {
-            this.keyInfoField = value;
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-    public string Id {
-        get {
-            return this.idField;
-        }
-        set {
-            this.idField = value;
         }
     }
 }

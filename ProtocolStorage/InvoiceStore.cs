@@ -21,13 +21,13 @@ namespace BrazilInvoiceMock.ProtocolStorage
             }
         }
 
-        public static InvoiceEntry FindByProtocol(string protocol)
+        public static InvoiceEntry FindByReceipt(string receipt)
         {
             lock (_lock)
             {
                 return File.ReadLines(_filePath)
                     .Select(line => InvoiceEntry.FromLine(line))
-                    .FirstOrDefault(e => e.ProtocolNumber == protocol);
+                    .FirstOrDefault(e => e.ReceiptNumber == receipt);
             }
         }
     }
