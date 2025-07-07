@@ -6,7 +6,7 @@ This project provides a mock for the Brazilian Invoice services, including:
 	- NFeAutorizacao4
 	- NFeRetAutorizacao4
 - City Halls:
-	- Ginfes - Nota Fiscal de Serviços Eletrônica (NFS-e) *just authorization request*:
+	- Ginfes - Nota Fiscal de Serviços Eletrônica (NFS-e) *just authorizion, rejection to be implemented*:
 		- São Caetano do Sul
 		- Santos
 		- Etc.
