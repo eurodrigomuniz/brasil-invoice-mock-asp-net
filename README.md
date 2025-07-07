@@ -1,5 +1,16 @@
 # Brazil Invoice Mock
 
+# Available services
+This project provides a mock for the Brazilian Invoice services, including:
+- SEFAZ - Secretaria da Fazenda:
+	- NFeAutorizacao4
+	- NFeRetAutorizacao4
+- City Halls:
+	- Ginfes - Nota Fiscal de Serviços Eletrônica (NFS-e) *just authorization request*:
+		- São Caetano do Sul
+		- Santos
+		- Etc.
+
 # How to run the mock
 Create an IIS application and set the path to the published folder of the project or run locally.
 
