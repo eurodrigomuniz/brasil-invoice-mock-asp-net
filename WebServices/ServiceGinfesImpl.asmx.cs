@@ -46,7 +46,7 @@ namespace BrazilInvoiceMock.WebServices
         [return: XmlElement("return")]
         public string ConsultarLoteRpsV3(string arg0, string arg1)
         {
-            throw new NotImplementedException();
+            return new ServiceGinfesImplProcessor(XmlHelper.DeserializeXml<ConsultarLoteRpsEnvio>(arg1)).GenerateAuthorizationReturnResponse();
         }
 
         [return: XmlElement("return")]
@@ -118,7 +118,7 @@ namespace BrazilInvoiceMock.WebServices
         [return: XmlElement("return")]
         public string RecepcionarLoteRpsV3(string arg0, string arg1)
         {
-            return new ServiceGinfesImplProcessor(XmlHelper.DeserializeXml<EnviarLoteRpsEnvio>(arg1)).GenerateResponse();
+            return new ServiceGinfesImplProcessor(XmlHelper.DeserializeXml<EnviarLoteRpsEnvio>(arg1)).GenerateAuthorizationResponse();
         }
 
         [return: XmlElement("return")]

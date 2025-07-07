@@ -10,7 +10,7 @@ namespace BrazilInvoiceMock.Services
 {
     public class ServiceGinfesImplProcessor
     {
-        public ServiceGinfesImplProcessor (EnviarLoteRpsEnvio enviarLoteRpsEnvio)
+        public ServiceGinfesImplProcessor(EnviarLoteRpsEnvio enviarLoteRpsEnvio)
         {
             BatchNumber = enviarLoteRpsEnvio.LoteRps.ListaRps[0].InfRps.IdentificacaoRps.Numero;
             ReceivalDateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
@@ -18,20 +18,28 @@ namespace BrazilInvoiceMock.Services
             CityHallCode = enviarLoteRpsEnvio.LoteRps.ListaRps[0].InfRps.Servico.CodigoMunicipio.ToString();
             Discrimination = enviarLoteRpsEnvio.LoteRps.ListaRps[0].InfRps.Servico.Discriminacao;
             StatusCode = ExtractStatusCode();
-            if(StatusCode == "S100")
+            if (StatusCode == "S100")
             {
                 FiscalInvoiceNumber = GenerateFiscalInvoiceNumber();
                 AuthorizationCode = GenerateAuthorizationCode(5);
             }
         }
+
+        public ServiceGinfesImplProcessor(ConsultarLoteRpsEnvio consultarLoteRpsEnvio)
+        {
+            ProtocolNumber = consultarLoteRpsEnvio.Protocolo;
+        }
+
         private string BatchNumber { get; set; }
         private string ReceivalDateTime { get; set; }
         private string ProtocolNumber { get; set; }
-        private string CityHallCode { get; set; } 
+        private string CityHallCode { get; set; }
         private string Discrimination { get; set; }
-        private string StatusCode { get; set; } 
-        private string FiscalInvoiceNumber { get; set; } 
+        private string StatusCode { get; set; }
+        private string FiscalInvoiceNumber { get; set; }
         private string AuthorizationCode { get; set; }
+        private NFSeEntry InvoiceEntry => InvoiceStore.FindByKeyValue(ProtocolNumber) as NFSeEntry;
+
 
         private string GenerateProtocolNumber()
         {
@@ -69,7 +77,7 @@ namespace BrazilInvoiceMock.Services
             }
         }
 
-        public string GenerateResponse()
+        public string GenerateAuthorizationResponse()
         {
             InvoiceStore.SaveEntry(new NFSeEntry
             {
@@ -82,11 +90,23 @@ namespace BrazilInvoiceMock.Services
                 AuthorizationCode = AuthorizationCode // Example authorization code, replace with actual logic
             });
 
-            string authorizationResponse = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Templates/ServiceGinfesImpl.xml"));
+            string authorizationResponse = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Templates/ServiceGinfesImpl_RecepcionarLoteRpsV3.xml"));
 
             return authorizationResponse.Replace("[NumeroLote]", BatchNumber)
                                                         .Replace("[DataRecebimento]", ReceivalDateTime)
                                                         .Replace("[Protocolo]", ProtocolNumber);
+        }
+
+        public string GenerateAuthorizationReturnResponse()
+        {
+            string authorizationReturnResponse = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Templates/ServiceGinfesImpl_ConsultarLoteRpsV3.xml"));
+
+            return authorizationReturnResponse.Replace("[NumeroNFSe]", InvoiceEntry.FiscalInvoiceNumber)
+            .Replace("[CodigoVerificacao]", InvoiceEntry.AuthorizationCode)
+            .Replace("[DataEmissao]", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"))
+            .Replace("[Numero]", InvoiceEntry.BatchNumber)
+            .Replace("[DataEmissaoRps]", DateTime.Now.ToString("yyyy-MM-dd"))
+            .Replace("[CodigoMunicipio]", InvoiceEntry.CityHallCode);
         }
     }
 }

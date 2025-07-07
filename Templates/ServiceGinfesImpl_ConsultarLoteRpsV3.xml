@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:ConsultarLoteRpsResposta
+	xmlns:ns2="http://www.w3.org/2000/09/xmldsig#"
+	xmlns:ns4="http://www.ginfes.com.br/tipos_v03.xsd"
+	xmlns:ns3="http://www.ginfes.com.br/servico_consultar_lote_rps_resposta_v03.xsd">
+  <ns3:ListaNfse>
+    <ns3:CompNfse>
+      <ns4:Nfse>
+        <ns4:InfNfse>
+          <ns4:Numero>[NumeroNFSe]</ns4:Numero>
+          <ns4:CodigoVerificacao>[CodigoVerificacao]</ns4:CodigoVerificacao>
+          <ns4:DataEmissao>[DataEmissao]</ns4:DataEmissao>
+          <ns4:IdentificacaoRps>
+            <ns4:Numero>[Numero]</ns4:Numero>
+            <ns4:Serie>2</ns4:Serie>
+            <ns4:Tipo>1</ns4:Tipo>
+          </ns4:IdentificacaoRps>
+          <ns4:DataEmissaoRps>[DataEmissaoRps]</ns4:DataEmissaoRps>
+          <ns4:NaturezaOperacao>1</ns4:NaturezaOperacao>
+          <ns4:RegimeEspecialTributacao>0</ns4:RegimeEspecialTributacao>
+          <ns4:OptanteSimplesNacional>2</ns4:OptanteSimplesNacional>
+          <ns4:IncentivadorCultural>2</ns4:IncentivadorCultural>
+          <ns4:Competencia>[DataEmissaoRps]</ns4:Competencia>
+          <ns4:Servico>
+            <ns4:Valores>
+              <ns4:ValorServicos>616.11</ns4:ValorServicos>
+              <ns4:ValorDeducoes>0</ns4:ValorDeducoes>
+              <ns4:ValorPis>4</ns4:ValorPis>
+              <ns4:ValorCofins>18.48</ns4:ValorCofins>
+              <ns4:ValorInss>0</ns4:ValorInss>
+              <ns4:ValorIr>0</ns4:ValorIr>
+              <ns4:ValorCsll>6.16</ns4:ValorCsll>
+              <ns4:IssRetido>2</ns4:IssRetido>
+              <ns4:ValorIss>12.32</ns4:ValorIss>
+              <ns4:ValorIssRetido>0</ns4:ValorIssRetido>
+              <ns4:OutrasRetencoes>0</ns4:OutrasRetencoes>
+              <ns4:BaseCalculo>616.11</ns4:BaseCalculo>
+              <ns4:Aliquota>2</ns4:Aliquota>
+              <ns4:ValorLiquidoNfse>587.47</ns4:ValorLiquidoNfse>
+              <ns4:DescontoIncondicionado>0</ns4:DescontoIncondicionado>
+              <ns4:DescontoCondicionado>0</ns4:DescontoCondicionado>
+            </ns4:Valores>
+            <ns4:ItemListaServico>106</ns4:ItemListaServico>
+            <ns4:CodigoTributacaoMunicipio>3360500</ns4:CodigoTributacaoMunicipio>
+            <ns4:Discriminacao>
+              Brazil
+              Consulting (Tax)PIS Retido (0,65%) : R$4;COFINS Retido
+              (3,00%) : R$18.48;CSLL Retida
+              (1,00%) : R$6.16;Boehringer Animal Health;Application
+              Support Evolutio mes de
+              Janeiro 2023 - PO 4700224272;PAYEMENTS TERMS 30 DDL; e
+              Ordem de Compra/PROP
+              4700224272SERVICES - Project Related Professional
+              Services -
+              1
+            </ns4:Discriminacao>
+            <ns4:CodigoMunicipio>[CodigoMunicipio]</ns4:CodigoMunicipio>
+          </ns4:Servico>
+          <ns4:ValorCredito>0</ns4:ValorCredito>
+          <ns4:PrestadorServico>
+            <ns4:IdentificacaoPrestador>
+              <ns4:Cnpj>02283647000101</ns4:Cnpj>
+              <ns4:InscricaoMunicipal>53664</ns4:InscricaoMunicipal>
+            </ns4:IdentificacaoPrestador>
+            <ns4:RazaoSocial>
+              SIEMENS
+              INDUSTRY SOFTWARE
+              LTDA.
+            </ns4:RazaoSocial>
+            <ns4:Endereco>
+              <ns4:Endereco>
+                RUA
+                NITERÓI
+              </ns4:Endereco>
+              <ns4:Numero>400</ns4:Numero>
+              <ns4:Complemento>
+                ANDAR
+                7 SALA 701 705 A 708
+                AND
+              </ns4:Complemento>
+              <ns4:Bairro>CENTRO</ns4:Bairro>
+              <ns4:CodigoMunicipio>[CodigoMunicipio]</ns4:CodigoMunicipio>
+              <ns4:Uf>SP</ns4:Uf>
+              <ns4:Cep>9510200</ns4:Cep>
+            </ns4:Endereco>
+            <ns4:Contato>
+              <ns4:Telefone>42287697</ns4:Telefone>
+            </ns4:Contato>
+          </ns4:PrestadorServico>
+          <ns4:TomadorServico>
+            <ns4:IdentificacaoTomador>
+              <ns4:CpfCnpj>
+                <ns4:Cnpj>57600249000155</ns4:Cnpj>
+              </ns4:CpfCnpj>
+            </ns4:IdentificacaoTomador>
+            <ns4:RazaoSocial>
+              BOEHRINGER
+              INGELHEIM ANIMAL HEALTH DO BRASIL
+              LTDA.
+            </ns4:RazaoSocial>
+            <ns4:Endereco>
+              <ns4:Endereco>
+                AV DOUTOR
+                ROBERTO MOREIRA,
+                5005
+              </ns4:Endereco>
+              <ns4:Numero>0000000000</ns4:Numero>
+              <ns4:Bairro>
+                RECANTO
+                DOS
+                PASSAROS
+              </ns4:Bairro>
+              <ns4:CodigoMunicipio>3536505</ns4:CodigoMunicipio>
+              <ns4:Uf>SP</ns4:Uf>
+              <ns4:Cep>13148914</ns4:Cep>
+            </ns4:Endereco>
+            <ns4:Contato>
+              <ns4:Telefone>1149494814</ns4:Telefone>
+              <ns4:Email>joao.silva@sovos.com</ns4:Email>
+            </ns4:Contato>
+          </ns4:TomadorServico>
+          <ns4:OrgaoGerador>
+            <ns4:CodigoMunicipio>[CodigoMunicipio]</ns4:CodigoMunicipio>
+            <ns4:Uf>SP</ns4:Uf>
+          </ns4:OrgaoGerador>
+        </ns4:InfNfse>
+      </ns4:Nfse>
+    </ns3:CompNfse>
+  </ns3:ListaNfse>
+</ns3:ConsultarLoteRpsResposta>

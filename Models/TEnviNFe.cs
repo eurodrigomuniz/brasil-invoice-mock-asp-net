@@ -119,7 +119,7 @@ namespace BrazilInvoiceMock.Models.NFe
 
         private TNFeInfNFeSupl infNFeSuplField;
 
-        private SignatureType signatureField;
+        private NFeSignatureType signatureField;
 
         /// <remarks/>
         public TNFeInfNFe infNFe
@@ -149,7 +149,7 @@ namespace BrazilInvoiceMock.Models.NFe
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
-        public SignatureType Signature
+        public NFeSignatureType Signature
         {
             get
             {

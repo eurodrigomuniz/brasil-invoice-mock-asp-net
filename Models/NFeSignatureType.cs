@@ -12,7 +12,7 @@ namespace BrazilInvoiceMock.Models.NFe
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://www.w3.org/2000/09/xmldsig#")]
     [System.Xml.Serialization.XmlRootAttribute("Signature", Namespace = "http://www.w3.org/2000/09/xmldsig#", IsNullable = false)]
-    public partial class SignatureType
+    public partial class NFeSignatureType
     {
 
         private SignedInfoType signedInfoField;

@@ -20,18 +20,18 @@ namespace BrazilInvoiceMock.ProtocolStorage
         public static new NFSeEntry FromLine(string line)
         {
             var parts = line.Split('|');
-            if (parts.Length < 7)
+            if (parts.Length < 8)
                 return null;
 
             return new NFSeEntry
             {
-                ProtocolNumber = parts[0],
-                BatchNumber = parts[1],
-                ReceivalDateTime = parts[2],
-                CityHallCode = parts[3],
-                StatusCode = parts[4],
-                FiscalInvoiceNumber = parts[5],
-                AuthorizationCode = parts[6]
+                ProtocolNumber = parts[1],
+                BatchNumber = parts[2],
+                ReceivalDateTime = parts[3],
+                CityHallCode = parts[4],
+                StatusCode = parts[5],
+                FiscalInvoiceNumber = parts[6],
+                AuthorizationCode = parts[7]
             };
         }
 
