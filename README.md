@@ -40,3 +40,12 @@ Deserialize the request using the model generated in step 2 and return the respo
 The mock uses templates to generate the XML responses. The templates are located in the `Templates` folder and are named after the service, for example `NFeAutorizacao4.xml`.
 
 For Brazilian Tax Authority, for example, to return the response with the correct text, JSONs are used with response based on the status code. Application version is based on the state code.
+
+# How to set the document for authorization or rejection
+
+There are fields in the document which are allowed to be set to any value, so they are used to set the document for authorization or rejection.
+
+- For NF-e: `/enviNFe/NFe[0]/infNFe/infAdic/obsCont/xTexto`
+	- If this field is filled, the document will be rejected using the content of this field as the rejection reason. The SEFAZ cStat code should be provided. Otherwise the document is authorized.
+- For NFS-e: `/enviarLoteRpsEnvio/LoteRps/ListaRps[0]/InfRps/Servico/Discriminacao`
+	- If in this field, there is a text starting with @ and finishing with *, what is between @ and * will be used as the rejection reason. The City Hall rejection code should be provided.
