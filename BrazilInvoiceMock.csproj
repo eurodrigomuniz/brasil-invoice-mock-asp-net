@@ -71,7 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Templates\NFeRetAutorizacao4.xml" />
+    <Content Include="Templates\ServiceGinfesImpl.xml" />
     <Content Include="WebServices\NFeRetAutorizacao4.asmx" />
+    <Content Include="WebServices\ServiceGinfesImpl.asmx" />
+    <None Include="WSDL\ServiceGinfesImpl.wsdl" />
     <None Include="App_Data\ReasonMessages.json" />
     <None Include="App_Data\ApplicationVersions.json" />
     <Content Include="Templates\NFeAutorizacao4.xml" />
@@ -79,33 +82,50 @@
     <Content Include="WebServices\NFeAutorizacao4.asmx" />
     <None Include="WSDL\NFeAutorizacao4.wsdl" />
     <None Include="WSDL\NFeRetAutorizacao4.wsdl" />
-    <None Include="XSD\consReciNFe_v4.00.xsd">
+    <None Include="XSD\NF-e\consReciNFe_v4.00.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="XSD\enviNFe_v4.00.xsd">
+    <None Include="XSD\NF-e\enviNFe_v4.00.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="XSD\leiauteNFe_v4.00.xsd">
+    <None Include="XSD\NF-e\leiauteNFe_v4.00.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="XSD\tiposBasico_v4.00.xsd">
+    <None Include="XSD\NF-e\tiposBasico_v4.00.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="XSD\xmldsig-core-schema_v1.01.xsd">
+    <None Include="XSD\NF-e\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\NFS-e\servico_consultar_lote_rps_envio_v03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\NFS-e\servico_enviar_lote_rps_envio_v03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\NFS-e\tipos_v03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\NFS-e\xmldsig-core-schema20020212_v03.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\INFeAutorizacao4.cs" />
     <Compile Include="Interfaces\INFeRetAutorizacao4.cs" />
+    <Compile Include="Interfaces\IServiceGinfesImpl.cs" />
     <Compile Include="Models\SignatureType.cs" />
     <Compile Include="Models\TEnviNFe.cs" />
     <Compile Include="Models\TConsReciNFe.cs" />
+    <Compile Include="Models\GinfesEnviarLoteRpsEnvio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProtocolStorage\InvoiceEntry.cs" />
     <Compile Include="ProtocolStorage\InvoiceStore.cs" />
+    <Compile Include="ProtocolStorage\NFeEntry.cs" />
+    <Compile Include="ProtocolStorage\NFSeEntry.cs" />
     <Compile Include="Services\NFeAutorizacao4Processor.cs" />
     <Compile Include="Services\NFeRetAutorizacao4Processor.cs" />
+    <Compile Include="Services\ServiceGinfesImplProcessor.cs" />
     <Compile Include="Utils\StaticDataProvider.cs" />
     <Compile Include="Utils\XmlHelper.cs" />
     <Compile Include="WebServices\NFeAutorizacao4.asmx.cs">
@@ -113,6 +133,9 @@
     </Compile>
     <Compile Include="WebServices\NFeRetAutorizacao4.asmx.cs">
       <DependentUpon>NFeRetAutorizacao4.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\ServiceGinfesImpl.asmx.cs">
+      <DependentUpon>ServiceGinfesImpl.asmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

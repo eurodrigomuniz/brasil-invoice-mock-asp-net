@@ -1,4 +1,5 @@
-﻿using BrazilInvoiceMock.Services;
+﻿using BrazilInvoiceMock.Models.NFe;
+using BrazilInvoiceMock.Services;
 using BrazilInvoiceMock.Utils;
 using System;
 using System.Collections.Generic;

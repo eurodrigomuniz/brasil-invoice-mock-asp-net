@@ -1,6 +1,6 @@
-﻿using BrazilInvoiceMock.ProtocolStorage;
+﻿using BrazilInvoiceMock.Models.NFe;
+using BrazilInvoiceMock.ProtocolStorage;
 using BrazilInvoiceMock.Utils;
-using MyInvoiceService.ProtocolStorage;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,7 +18,7 @@ namespace BrazilInvoiceMock.Services
             ReceiptNumber = consReciNFe.nRec;
         }
         private string ReceiptNumber { get; set; }
-        private InvoiceEntry InvoiceEntry => InvoiceStore.FindByReceipt(ReceiptNumber);
+        private NFeEntry InvoiceEntry => InvoiceStore.FindByKeyValue(ReceiptNumber) as NFeEntry;
 
         public XmlNode GenerateResponse()
         {

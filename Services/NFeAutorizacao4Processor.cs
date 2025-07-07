@@ -1,6 +1,6 @@
-﻿using BrazilInvoiceMock.ProtocolStorage;
+﻿using BrazilInvoiceMock.Models.NFe;
+using BrazilInvoiceMock.ProtocolStorage;
 using BrazilInvoiceMock.Utils;
-using MyInvoiceService.ProtocolStorage;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -62,7 +62,7 @@ namespace BrazilInvoiceMock.Services
 
         public XmlNode GenerateResponse()
         {
-            InvoiceStore.SaveEntry(new InvoiceEntry
+            InvoiceStore.SaveEntry(new NFeEntry
             {
                 ReceiptNumber = ReceiptNumber,
                 AccessKey = AcessKey,

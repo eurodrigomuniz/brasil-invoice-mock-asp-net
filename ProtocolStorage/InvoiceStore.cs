@@ -1,5 +1,4 @@
-﻿using MyInvoiceService.ProtocolStorage;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,20 +13,20 @@ namespace BrazilInvoiceMock.ProtocolStorage
 
         public static void SaveEntry(InvoiceEntry entry)
         {
-            var line = $"{entry.ReceiptNumber}|{entry.AccessKey}|{entry.ReceivalDateTime}|{entry.DigestValue}|{entry.StatusCode}|{entry.IssuingTypeCode}|{entry.ProtocolNumber}";
+            var line = entry.ToLine();
             lock (_lock)
             {
                 File.AppendAllLines(_filePath, new[] { line });
             }
         }
 
-        public static InvoiceEntry FindByReceipt(string receipt)
+        public static InvoiceEntry FindByKeyValue(string key)
         {
             lock (_lock)
             {
                 return File.ReadLines(_filePath)
                     .Select(line => InvoiceEntry.FromLine(line))
-                    .FirstOrDefault(e => e.ReceiptNumber == receipt);
+                    .FirstOrDefault(e => e != null && e.KeyValue == key);
             }
         }
     }
