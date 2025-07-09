@@ -1,5 +1,7 @@
-﻿using BrazilInvoiceMock.Models.NFSe;
+﻿using BrazilInvoiceMock.Models;
+using BrazilInvoiceMock.Models.NFSe;
 using BrazilInvoiceMock.ProtocolStorage;
+using BrazilInvoiceMock.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -99,14 +101,22 @@ namespace BrazilInvoiceMock.Services
 
         public string GenerateAuthorizationReturnResponse()
         {
-            string authorizationReturnResponse = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Templates/ServiceGinfesImpl_ConsultarLoteRpsV3.xml"));
+            string authorizationReturnResponse = File.ReadAllText(HttpContext.Current.Server.MapPath($"~/Templates/ServiceGinfesImpl_ConsultarLoteRpsV3_{(InvoiceEntry.StatusCode == "S100" ? 1 : 0)}.xml"));
 
-            return authorizationReturnResponse.Replace("[NumeroNFSe]", InvoiceEntry.FiscalInvoiceNumber)
-            .Replace("[CodigoVerificacao]", InvoiceEntry.AuthorizationCode)
-            .Replace("[DataEmissao]", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"))
-            .Replace("[Numero]", InvoiceEntry.BatchNumber)
-            .Replace("[DataEmissaoRps]", DateTime.Now.ToString("yyyy-MM-dd"))
-            .Replace("[CodigoMunicipio]", InvoiceEntry.CityHallCode);
+            if(InvoiceEntry.StatusCode == "S100") 
+                return authorizationReturnResponse.Replace("[NumeroNFSe]", InvoiceEntry.FiscalInvoiceNumber)
+                .Replace("[CodigoVerificacao]", InvoiceEntry.AuthorizationCode)
+                .Replace("[DataEmissao]", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"))
+                .Replace("[Numero]", InvoiceEntry.BatchNumber)
+                .Replace("[DataEmissaoRps]", DateTime.Now.ToString("yyyy-MM-dd"))
+                .Replace("[CodigoMunicipio]", InvoiceEntry.CityHallCode);
+            else
+            {
+                NFSeRejection nfseRejection = StaticDataProvider.GetNFSeRejection(InvoiceEntry.StatusCode);
+                return authorizationReturnResponse.Replace("[Codigo]", nfseRejection.Code)
+                .Replace("[Mensagem]", nfseRejection.Message)
+                .Replace("[Correcao]", nfseRejection.Correction);
+            }
         }
     }
 }

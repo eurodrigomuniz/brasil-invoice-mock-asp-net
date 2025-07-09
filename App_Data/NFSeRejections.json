@@ -1,0 +1,17 @@
+﻿{
+	"E10": {
+		"Code": "E10",
+		"Message": "RPS já informado.",
+		"Correction": "Para essa Inscrição Municipal/CNPJ já existe um RPS informado com o mesmo número, série e tipo."
+	},
+	"E186": {
+		"Code": "E186",
+		"Message": "O campo valorIss informado incorretamente",
+		"Correction": "O valor do campo valorIss é calculado multiplicando a base de cálculo pelo valor da aliquota."
+	},
+	"A02": {
+		"Code": "A02",
+		"Message": "Empresa já com uma consulta em andamento.",
+		"Correction": "Favor aguardar o termino de uma consulta para efetuar outra."
+	}
+}

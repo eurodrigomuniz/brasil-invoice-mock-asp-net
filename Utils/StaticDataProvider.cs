@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using BrazilInvoiceMock.Models;
 using Newtonsoft.Json;
 
 namespace BrazilInvoiceMock.Utils
@@ -25,6 +26,14 @@ namespace BrazilInvoiceMock.Utils
             );
 
             return version[state];
+        }
+
+        public static NFSeRejection GetNFSeRejection(string code)
+        {
+            var rejection = JsonConvert.DeserializeObject<Dictionary<string, NFSeRejection>>(
+                File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data/NFSeRejections.json"))
+                );
+            return rejection[code];
         }
     }
 

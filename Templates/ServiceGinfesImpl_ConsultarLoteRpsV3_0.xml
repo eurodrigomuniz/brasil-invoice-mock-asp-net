@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:ConsultarLoteRpsResposta xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns4="http://www.ginfes.com.br/tipos_v03.xsd" xmlns:ns3="http://www.ginfes.com.br/servico_consultar_lote_rps_resposta_v03.xsd">
+  <ListaMensagemRetorno>
+    <ns4:MensagemRetorno>
+      <ns4:Codigo>[Codigo]</ns4:Codigo>
+      <ns4:Mensagem>[Mensagem]</ns4:Mensagem>
+      <ns4:Correcao>[Correcao]</ns4:Correcao>
+    </ns4:MensagemRetorno>
+  </ListaMensagemRetorno>
+</ns3:ConsultarLoteRpsResposta>

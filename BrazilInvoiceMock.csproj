@@ -70,9 +70,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\NFSeRejections.json" />
     <Content Include="Templates\NFeRetAutorizacao4.xml" />
+    <Content Include="Templates\ServiceGinfesImpl_ConsultarLoteRpsV3_0.xml" />
     <Content Include="Templates\ServiceGinfesImpl_RecepcionarLoteRpsV3.xml" />
-    <Content Include="Templates\ServiceGinfesImpl_ConsultarLoteRpsV3.xml" />
+    <Content Include="Templates\ServiceGinfesImpl_ConsultarLoteRpsV3_1.xml" />
     <Content Include="WebServices\NFeRetAutorizacao4.asmx" />
     <Content Include="WebServices\ServiceGinfesImpl.asmx" />
     <None Include="WSDL\ServiceGinfesImpl.wsdl" />
@@ -115,6 +117,7 @@
     <Compile Include="Interfaces\INFeAutorizacao4.cs" />
     <Compile Include="Interfaces\INFeRetAutorizacao4.cs" />
     <Compile Include="Interfaces\IServiceGinfesImpl.cs" />
+    <Compile Include="Models\NFSeRejection.cs" />
     <Compile Include="Models\tcIdentificacaoPrestador.cs" />
     <Compile Include="Models\GinfesConsultarLoteRpsEnvio.cs" />
     <Compile Include="Models\NFeSignatureType.cs" />
